@@ -62,7 +62,7 @@ router.get('/', auth, async (req, res) => {
   try {
     // reading the data from user
     // const id = req.query.id
-    // console.log(id)
+    console.log("hello")
     const user = await User.findById(req.user)
     res.json({
       id: user._id,

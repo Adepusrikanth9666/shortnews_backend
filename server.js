@@ -25,7 +25,7 @@ app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 
   console.log(process.env.MONGODB_CONNECTION_STRING);
-  
+  console.log("hello");
   app.listen(port,()=>console.log(`the server has started on port :${port}`));
 mongoose.connect(process.env.MONGODB_CONNECTION_STRING,{
     useNewUrlParser:true,
