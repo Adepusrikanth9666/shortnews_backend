@@ -9,7 +9,7 @@ const auth = (req,res,next)=>{
             return res.status(401).json({msg:"no authentication is denined"});
 
         }  
-        console.log("hello");
+        
         const verified = jwt.verify(token,process.env.JWT_SERECT);
         if(!verified){
 
