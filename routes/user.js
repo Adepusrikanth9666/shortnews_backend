@@ -41,10 +41,10 @@ router.post('/login', async (req, res) => {
     if (!user) {
       return res
         .status(400)
-        .json({ msg: 'User account does not exists' })
+        .json({ msg: 'User account does not exists',status:400 })
     }
     const isMatch = await bcrypt.compare(password, user.password)
-    if (!isMatch) return res.status(400).json({ msg: 'Invalid credentials' })
+    if (!isMatch) return res.status(401).json({ msg: 'Invalid credentials',status:401 })
     // encryption is happening to the token
     const token = jwt.sign({ id: user._id }, process.env.JWT_SECRET)
     res.json({
