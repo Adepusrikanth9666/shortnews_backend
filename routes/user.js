@@ -69,6 +69,7 @@ router.get('/', auth, async (req, res) => {
       email: user.email,
       password: user.password
     })
+    console.log(res);
   } catch (err) {
     res.status(500).json({ error: err.message })
   }
